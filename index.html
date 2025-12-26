@@ -1,58 +1,74 @@
-<style>
-    /* ... (весь предыдущий код стилей остается) ... */
-
-    /* УЛУЧШЕННАЯ МОБИЛЬНАЯ ВЕРСИЯ */
-    @media (max-width: 768px) {
-        header .container {
-            padding: 0 10px; /* Немного сужаем отступы в шапке */
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NickCarFix | Professional Auto Service Larnaca</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --orange: #FF8C00;
+            --blue: #0047AB;
+            --dark: #333;
+            --light-bg: #f9f9f9;
+            --white: #ffffff;
+            --whatsapp: #25D366;
+            --viber: #7360f2;
+            --telegram: #0088cc;
         }
+
+        * { scroll-behavior: smooth; box-sizing: border-box; }
+        body {
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            margin: 0; padding: 0;
+            background-color: var(--white);
+            color: var(--dark);
+            line-height: 1.6;
+        }
+
+        .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+
+        /* HEADER */
+        header {
+            padding: 15px 0;
+            border-bottom: 1px solid #eee;
+            position: sticky;
+            top: 0;
+            background: white;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+        header .container { display: flex; justify-content: space-between; align-items: center; }
         
-        .logo { 
-            font-size: 18px; /* Уменьшаем лого, чтобы всё влезло в одну строку */
-        }
+        .logo { font-size: 26px; font-weight: 800; color: var(--blue); text-decoration: none; text-transform: uppercase; transition: 0.3s; }
+        .logo span { color: var(--orange); }
 
-        .header-right { 
-            gap: 8px; /* Плотно прижимаем иконки друг к другу */
-        }
-
-        .messenger-link { 
-            font-size: 18px; /* Чуть меньше иконки WhatsApp/Viber */
-        }
-
-        /* КНОПКА "КАРТА" ДЛЯ МОБИЛЬНЫХ */
-        .find-us-link { 
-            display: inline-block; /* ВОЗВРАЩАЕМ КНОПКУ */
-            font-size: 11px; 
-            padding: 5px 8px; 
-            border-radius: 4px;
-            white-space: nowrap; /* Чтобы текст не переносился */
-        }
+        .header-right { display: flex; align-items: center; gap: 15px; }
         
-        .section { padding: 40px 0; }
-        .hero { padding: 50px 0; }
-        
-        /* Сетка преимуществ 2х2 */
-        .benefits-grid { 
-            grid-template-columns: repeat(2, 1fr); 
-            gap: 15px; 
+        .messenger-link { font-size: 22px; transition: 0.3s; text-decoration: none; }
+        .messenger-link:hover { opacity: 0.7; transform: translateY(-2px); }
+        .fa-whatsapp { color: var(--whatsapp); }
+        .fa-viber { color: var(--viber); }
+        .fa-telegram { color: var(--telegram); }
+
+        .find-us-link {
+            text-decoration: none; color: var(--blue); font-weight: bold; font-size: 14px;
+            border: 1px solid var(--blue); padding: 8px 12px; border-radius: 5px; 
+            transition: 0.3s; white-space: nowrap;
         }
-        .benefit-card:last-child { grid-column: span 2; }
+        .find-us-link:hover { background: var(--blue); color: white; }
 
-        /* Услуги в один столбец */
-        .services-grid { grid-template-columns: 1fr; }
-        .map-wrapper { height: 300px; }
-    }
-</style>
+        /* HERO SECTION */
+        .hero {
+            padding: 100px 0;
+            text-align: center;
+            background: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%);
+        }
+        .hero h1 { font-size: clamp(28px, 5vw, 48px); color: var(--blue); margin-bottom: 20px; text-transform: uppercase; line-height: 1.2; }
+        .hero p { font-size: 18px; color: #555; max-width: 700px; margin: 0 auto 40px; }
 
-<header>
-    <div class="container">
-        <a href="#" class="logo">Nick<span>Car</span>Fix</a>
-        <div class="header-right">
-            <a href="https://wa.me/35796438095" target="_blank" class="messenger-link"><i class="fab fa-whatsapp"></i></a>
-            <a href="viber://chat?number=%2B35796438095" target="_blank" class="messenger-link"><i class="fab fa-viber"></i></a>
-            <a href="https://t.me/+35796438095" target="_blank" class="messenger-link"><i class="fab fa-telegram"></i></a>
-            
-            <a href="#map-section" class="find-us-link">Find Us</a>
-        </div>
-    </div>
-</header>
+        .btn-orange { 
+            padding: 18px 35px; text-decoration: none; font-weight: bold; border-radius:
