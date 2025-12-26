@@ -71,4 +71,182 @@
         .hero p { font-size: 18px; color: #555; max-width: 700px; margin: 0 auto 40px; }
 
         .btn-orange { 
-            padding: 18px 35px; text-decoration: none; font-weight: bold; border-radius:
+            padding: 18px 35px; text-decoration: none; font-weight: bold; border-radius: 8px;
+            display: inline-block; background-color: var(--orange); color: white; text-transform: uppercase;
+        }
+
+        /* SECTIONS */
+        .section { padding: 80px 0; }
+        .text-center { text-align: center; }
+        .section h2 { color: var(--blue); font-size: 30px; margin-bottom: 40px; text-transform: uppercase; }
+
+        /* ADVANTAGES GRID */
+        .benefits-grid { 
+            display: grid; 
+            grid-template-columns: repeat(3, 1fr); 
+            gap: 30px; 
+        }
+        .benefit-card { text-align: center; padding: 15px; }
+        .benefit-card i { font-size: 45px; color: var(--blue); margin-bottom: 15px; }
+        .benefit-card h4 { font-weight: bold; margin-bottom: 10px; font-size: 18px; }
+
+        /* SERVICES GRID */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        .service-card {
+            background: var(--light-bg);
+            padding: 30px;
+            border-radius: 12px;
+            border: 1px solid #eee;
+            transition: 0.3s;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .service-card:hover { border-color: var(--orange); transform: translateY(-5px); background: white; box-shadow: 0 10px 20px rgba(0,0,0,0.05); }
+        .service-card h3 { margin: 0 0 10px 0; color: var(--blue); font-size: 20px; }
+        .service-card p { font-size: 14px; color: #666; margin-bottom: 20px; }
+        .price-tag { font-weight: 800; color: var(--orange); font-size: 18px; }
+
+        /* MAP */
+        #map-section { background: var(--light-bg); padding: 80px 0; }
+        .map-wrapper { height: 450px; width: 100%; border-radius: 15px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+
+        footer { background: var(--dark); color: white; padding: 40px 0; text-align: center;}
+
+        /* MOBILE OPTIMIZATION */
+        @media (max-width: 768px) {
+            header { padding: 10px 0; }
+            .logo { font-size: 18px; }
+            .header-right { gap: 8px; }
+            .messenger-link { font-size: 18px; }
+            .find-us-link { font-size: 11px; padding: 5px 8px; }
+
+            .section { padding: 40px 0; }
+            .hero { padding: 60px 0; }
+            .hero p { font-size: 15px; margin-bottom: 30px; }
+
+            .benefits-grid { 
+                grid-template-columns: repeat(2, 1fr); 
+                gap: 15px; 
+            }
+            .benefit-card:last-child { grid-column: span 2; }
+            .benefit-card i { font-size: 35px; }
+            .benefit-card h4 { font-size: 16px; }
+
+            .services-grid { grid-template-columns: 1fr; }
+            .service-card { padding: 20px; }
+            
+            .map-wrapper { height: 300px; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="container">
+        <a href="#" class="logo">Nick<span>Car</span>Fix</a>
+        <div class="header-right">
+            <a href="https://wa.me/35796438095" target="_blank" class="messenger-link"><i class="fab fa-whatsapp"></i></a>
+            <a href="viber://chat?number=%2B35796438095" target="_blank" class="messenger-link"><i class="fab fa-viber"></i></a>
+            <a href="https://t.me/+35796438095" target="_blank" class="messenger-link"><i class="fab fa-telegram"></i></a>
+            <a href="#map-section" class="find-us-link">Find Us</a>
+        </div>
+    </div>
+</header>
+
+<section class="hero">
+    <div class="container">
+        <h1>Professional Service <br>for Modern Vehicles</h1>
+        <p>Specialized maintenance for Electric, Hybrid, and Petrol cars in Larnaca. Quality and reliability you can trust.</p>
+        <a href="https://wa.me/35796438095" class="btn-orange">Book an Appointment</a>
+    </div>
+</section>
+
+<section id="about" class="section container">
+    <div class="text-center">
+        <h2>Why Choose NickCarFix?</h2>
+    </div>
+    <div class="benefits-grid">
+        <div class="benefit-card">
+            <i class="fas fa-charging-station"></i>
+            <h4>EV Specialists</h4>
+            <p>Certified to work with hybrid and electric systems.</p>
+        </div>
+        <div class="benefit-card">
+            <i class="fas fa-microchip"></i>
+            <h4>Diagnostics</h4>
+            <p>Modern equipment for all vehicle brands.</p>
+        </div>
+        <div class="benefit-card">
+            <i class="fas fa-euro-sign"></i>
+            <h4>Fair Pricing</h4>
+            <p>Transparent quotes with no hidden costs.</p>
+        </div>
+    </div>
+</section>
+
+<section id="services" class="section container" style="border-top: 1px solid #eee;">
+    <div class="text-center">
+        <h2>Services & Prices</h2>
+    </div>
+    <div class="services-grid">
+        <div class="service-card">
+            <h3>Diagnostics</h3>
+            <p>Full vehicle inspection to identify hidden issues or fault codes.</p>
+            <span class="price-tag">from €30</span>
+        </div>
+        <div class="service-card">
+            <h3>Maintenance</h3>
+            <p>Regular check-ups to keep your car running smooth.</p>
+            <span class="price-tag">from €60</span>
+        </div>
+        <div class="service-card">
+            <h3>Chassis Repair</h3>
+            <p>Suspension and steering system repairs for a safe drive.</p>
+            <span class="price-tag">from €40</span>
+        </div>
+        <div class="service-card">
+            <h3>EV & Hybrid</h3>
+            <p>Specialized care for high-voltage systems and batteries.</p>
+            <span class="price-tag">from €50</span>
+        </div>
+        <div class="service-card">
+            <h3>Brakes</h3>
+            <p>Replacement of pads and discs using high-quality parts.</p>
+            <span class="price-tag">from €45</span>
+        </div>
+        <div class="service-card">
+            <h3>Computer Scan</h3>
+            <p>Advanced electronic scanning of engine and transmission.</p>
+            <span class="price-tag">from €30</span>
+        </div>
+    </div>
+</section>
+
+<section id="map-section">
+    <div class="container">
+        <div class="text-center">
+            <h2>Location</h2>
+            <p><i class="fas fa-map-marker-alt"></i> Medousis 29a, Larnaka 6059, Cyprus</p>
+        </div>
+        <div class="map-wrapper">
+            <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3271.868128543781!2d33.6111453!3d34.9222533!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14e08299c98686a7%3A0xfd490c7e681d67ec!2sMedousis%2029a%2C%20Larnaca%206059%2C%20Cyprus!5e0!3m2!1sen!2s!4v1700000000000!5m2!1sen!2s" 
+                width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <div class="container">
+        <p>© 2025 NickCarFix. Larnaca, Cyprus. <br> Tel: +357 96 438095</p>
+    </div>
+</footer>
+
+</body>
+</html>
